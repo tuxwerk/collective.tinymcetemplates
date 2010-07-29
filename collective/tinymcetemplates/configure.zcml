@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.tinymcetemapltes">
+
+    <browser:resourceDirectory
+        name="collective.tinymcetemplates.plugin"
+        directory="plugin"
+        />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="TinyMCE Templates Support"
+        directory="profiles/default"
+        description="Adds templates support to TinyMCE."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+</configure>
