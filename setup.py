@@ -22,7 +22,7 @@ setup(name='collective.tinymcetemplates',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.registry',
+          'plone.app.registry',
           'Products.TinyMCE',
       ],
       extras_require={

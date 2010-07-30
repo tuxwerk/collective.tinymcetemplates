@@ -4,6 +4,8 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="collective.tinymcetemapltes">
 
+    <include package="plone.app.registry" />
+
     <browser:resourceDirectory
         name="collective.tinymcetemplates.plugin"
         directory="plugin"
@@ -15,6 +17,13 @@
         directory="profiles/default"
         description="Adds templates support to TinyMCE."
         provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <browser:page
+        name="collective.tinymcetemplates.templatelist"
+        for="*"
+        class=".browser.TemplateList"
+        permission="zope2.View"
         />
 
 </configure>
