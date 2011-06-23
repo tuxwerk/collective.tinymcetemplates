@@ -11,7 +11,7 @@ from plone.registry.interfaces import IRegistry
 try:
     from Products.ATContentTypes.interfaces.document import IATDocument
 except:
-    from Products.ATContentTypes.interfaces import IATDocument
+    from Products.ATContentTypes.interface import IATDocument
 from Products.CMFCore.utils import getToolByName
 
 class TemplateList(BrowserView):
