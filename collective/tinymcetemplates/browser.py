@@ -1,14 +1,17 @@
 try:
     import json
 except ImportError:
-    from simplejson import json
+    import simplejson as json
 
 from zope.component import queryUtility
 from zope.publisher.browser import BrowserView
 
 from plone.registry.interfaces import IRegistry
 
-from Products.ATContentTypes.interfaces.document import IATDocument
+try:
+    from Products.ATContentTypes.interfaces.document import IATDocument
+except:
+    from Products.ATContentTypes.interfaces import IATDocument
 from Products.CMFCore.utils import getToolByName
 
 class TemplateList(BrowserView):

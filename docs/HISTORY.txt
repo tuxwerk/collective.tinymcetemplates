@@ -1,6 +1,11 @@
 Changelog
 =========
 
+unreleased
+----------
+
+* Fixed Plone 3 compatibility in some imports. [sneridagh]
+
 1.0b3 - 2010-07-31
 ------------------
 
