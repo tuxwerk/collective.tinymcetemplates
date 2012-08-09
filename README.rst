@@ -1,7 +1,7 @@
 Introduction
 ============
 
-``collective.tinymcetemplates`` is a Plone 3 add-on that provides a TinyMCE
+``collective.tinymcetemplates`` is a Plone add-on that provides a TinyMCE
 plugin that allows authors to insert *templates* and *snippets* into the page.
 
 Installation

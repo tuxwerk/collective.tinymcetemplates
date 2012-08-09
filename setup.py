@@ -1,16 +1,16 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0b3'
+version = '1.0b4'
 
 setup(name='collective.tinymcetemplates',
       version=version,
       description="TinyMCE Plugin for templates and snippets",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.rst").read() + "\n" +
+                       open("HISTORY.rst").read(),
       classifiers=[
-        "Programming Language :: Python",
-        ],
+          "Programming Language :: Python",
+      ],
       keywords='TinyMCE Plone template snippet',
       author='Rob Gietema',
       author_email='rob@fourdigits.nl',
@@ -26,7 +26,7 @@ setup(name='collective.tinymcetemplates',
           'Products.TinyMCE',
       ],
       extras_require={
-        'test': ['collective.testcaselayer', ],
+          'test': ['collective.testcaselayer', ],
       },
       entry_points="""
       [z3c.autoinclude.plugin]
