@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0b4htug2'
+version = '1.0b4'
 
 setup(name='collective.tinymcetemplates',
       version=version,
