@@ -1,21 +1,26 @@
-from setuptools import setup, find_packages
 import os
+from setuptools import setup, find_packages
 
 version = '1.0b4htug1'
+shortdesc = "TinyMCE Plugin for templates and snippets"
+longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
+longdesc += open(os.path.join(os.path.dirname(__file__), 'HISTORY.rst')).read()
 
 setup(name='collective.tinymcetemplates',
       version=version,
-      description="TinyMCE Plugin for templates and snippets",
-      long_description=open("README.rst").read() + "\n" +
-                       open("HISTORY.rst").read(),
+      description=shortdesc,
+      long_description=longdesc,
       classifiers=[
-          "Programming Language :: Python",
+            'Environment :: Web Environment',
+            'License :: OSI Approved :: GNU General Public License (GPL)',
+            'Operating System :: OS Independent',
+            'Programming Language :: Python',
+            'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
       ],
-      keywords='TinyMCE Plone template snippet',
       author='Rob Gietema',
       author_email='rob@fourdigits.nl',
       url='http://pypi.python.org/pypi/collective.tinymcetemplates',
-      license='GPL',
+      license='General Public Licence',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['collective'],
       include_package_data=True,
