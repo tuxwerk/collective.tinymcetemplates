@@ -12,6 +12,7 @@
 	border: none;
 	width: 320px;
 	height: 240px;
+	font-size: 90%;
 }
 
 .title {
@@ -20,4 +21,14 @@
 
 .mceActionPanel {
 	padding-top: 5px;
+}
+
+.mceActionPanel .left {
+    float: left;
+}
+.mceActionPanel .right {
+    float: right;
+}
+.mceActionPanel .clearboth {
+	clear: both;
 }
