@@ -33,7 +33,7 @@ also restrict access to templates in this way: an author will not see a
 template built from a Page he does not have the permission to see.
 
 To create some templates, the quickest option is to create a Folder with the
-id "templates" in the root of the site and put one or more Pages in this
+id "tinymce_templates" in the root of the site and put one or more Pages in this
 folder.
 
 *Hint:* You can tick the "exclude from navigation" button on the templates
