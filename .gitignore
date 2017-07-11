@@ -1,3 +1,4 @@
 *.pyc
 collective.tinymcetemplates.egg-info/
 dist/
+build/
