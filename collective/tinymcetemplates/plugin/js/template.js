@@ -24,11 +24,11 @@ var TemplateDialog = {
         // Use external template list as a fallback
         if (!tsrc && typeof(tinyMCETemplateList) != 'undefined') {
             for (x=0, tsrc = []; x<tinyMCETemplateList.length; x++)
-                tsrc.push({title : tinyMCETemplateList[x][0], src : tinyMCETemplateList[x][1], description : tinyMCETemplateList[x][2]});
+                tsrc.push({title : tinyMCETemplateList[x][0], url : tinyMCETemplateList[x][1], description : tinyMCETemplateList[x][2], raw : tinyMCETemplateList[x][3], content : tinyMCETemplateList[x][4]});
         }
 
         for (x=0; x<tsrc.length; x++)
-            sel.options[sel.options.length] = new Option(tsrc[x].title, tinyMCEPopup.editor.documentBaseURI.toAbsolute(tsrc[x].src));
+            sel.options[sel.options.length] = new Option(tsrc[x].title, tsrc[x].url);
 
         this.resize();
         this.tsrc = tsrc;
@@ -62,16 +62,16 @@ var TemplateDialog = {
     },
 
     selectTemplate : function(u, ti) {
-        var d = window.frames['templatesrc'].document, x, tsrc = this.tsrc;
+        var d = document.getElementById('templatesrc'), x, tsrc = this.tsrc;
 
         if (!u)
             return;
 
-        d.body.innerHTML = this.templateHTML = this.getFileContents(u);
-
         for (x=0; x<tsrc.length; x++) {
-            if (tsrc[x].title == ti)
+            if (tsrc[x].url == u)
                 document.getElementById('tmpldesc').innerHTML = tsrc[x].description || '';
+	        this.templateHTML = tsrc[x].raw || '';
+	        d.innerHTML = tsrc[x].content || '';
         }
     },
 
@@ -82,30 +82,6 @@ var TemplateDialog = {
         });
 
         tinyMCEPopup.close();
-    },
-
-    getFileContents : function(u) {
-        var x, d, t = 'text/plain';
-
-        function g(s) {
-            x = 0;
-
-            try {
-                x = new ActiveXObject(s);
-            } catch (s) {
-            }
-
-            return x;
-        };
-
-        x = window.ActiveXObject ? g('Msxml2.XMLHTTP') || g('Microsoft.XMLHTTP') : new XMLHttpRequest();
-
-        // Synchronous AJAX load file
-        x.overrideMimeType && x.overrideMimeType(t);
-        x.open("GET", u, false);
-        x.send(null);
-
-        return x.responseText;
     }
 };
 
