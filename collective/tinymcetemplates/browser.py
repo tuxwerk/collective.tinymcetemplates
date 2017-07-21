@@ -34,7 +34,7 @@ class TemplateList(BrowserView):
                         p = p[1:]
                     paths.append("%s/%s" % (portal_path, p,))
                 
-                for r in portal_catalog(path=paths, object_provides=IATDocument.__identifier__):
+                for r in portal_catalog(path=paths, sort_on='getObjPositionInParent', object_provides=IATDocument.__identifier__):
                     o = r.getObject()
                     templates.append([r.Title, r.getURL(), r.Description, o.getRawText(), o.getText()])
         
